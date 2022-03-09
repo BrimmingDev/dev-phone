@@ -10,18 +10,18 @@ You will need:
   1. Get the code:
      * Clone this repo & `cd` into the directory
   1. Install the plugin
-     * `cd plugin-dev-phone`
+     * `cd cli-plugin`
      * `npm install`
      * `npm run build`
      * `cd ..`
   1.  Link the plugin with your Twilio CLI installation
-     * `twilio plugins:link $(pwd)/plugin-dev-phone`
+     * `twilio plugins:link $(pwd)/cli-plugin`
   1. Start the plugin
      * `twilio dev-phone` or use a specific number by using the --phone-number flag. e.g. `twilio dev-phone --phone-number +11234567890`
      * Leave this running and continue in a new terminal.
   1. Start the front end
      * (TODO: this is not yet bundled and started automatically by the plugin)
-     * `cd plugin-dev-phone-client`
+     * `cd web-client`
      * `npm install`
      * `npm start`
 
@@ -36,11 +36,11 @@ to see a little gift.
 
 ## How to modify the plugin
 
-From now on you can edit the plugin server code (in `plugin-dev-phone`, running on port 3001 usually) and front end (in `plugin-dev-phone-client`, running on port 3000 usually)
+From now on you can edit the plugin server code (in `cli-plugin`, running on port 3001 usually) and front end (in `web-client`, running on port 3000 usually)
 
 ### Local back end
 
-Work in `plugin-dev-phone/`. Start with `src/commands/dev-phone.js`.
+Work in `cli-pluin/`. Start with `src/commands/dev-phone.js`.
 
 This does _not_ hot-reload, so whenever you make edits you will need to stop, rebuild with `npm run build` and restart with `twilio dev-phone`.
 
@@ -50,7 +50,7 @@ Run tests with `npm test`. There are no real tests at the moment but the place t
 
 ### Local front end
 
-Work in `plugin-dev-phone-client/`. Start with `src/App.js`.
+Work in `web-client/`. Start with `src/App.js`.
 
 This does hot-reload, so changes will be reflected in your browser as soon as you save.
 

@@ -8,6 +8,7 @@ import { deployServerless, constants } from '../utils/create-serverless-util';
 import { isSmsUrlSet, isVoiceUrlSet } from '../phone-number-utils';
 const { TwilioClientCommand } = require('@twilio/cli-core').baseCommands;
 const { TwilioCliError } = require('@twilio/cli-core').services.error;
+// const  WebClientDirectory = require('@twilio-labs/dev-phone-client/')
 
 // Types
 import { ServiceInstance as ServerlessServiceInstance } from 'twilio/lib/rest/serverless/v1/service'
@@ -100,7 +101,7 @@ class DevPhoneServer extends TwilioClientCommand {
 
         // serve assets from the "public" directory
         // __dirname is the path to _this_ file, so ../../public to find index.html
-        app.use(express.static(path.join(__dirname, '..', '..', 'public')));
+        app.use(express.static(path.join(__dirname, '..', 'public')));
 
         app.use(express.json()); // response body writer
 
@@ -193,7 +194,7 @@ class DevPhoneServer extends TwilioClientCommand {
         app.listen(PORT, () => {
             console.log(`🚀 Your local webserver is listening on port ${PORT}`);
 
-            if (fs.existsSync(path.join(__dirname, '..', '..', 'public', 'index.html'))) {
+            if (fs.existsSync(path.join(__dirname, '..', 'public', 'index.html'))) {
 
                 const uiUrl = `http://localhost:${PORT}/`
 
@@ -206,7 +207,7 @@ class DevPhoneServer extends TwilioClientCommand {
 
             } else {
                 console.log('Hello friend! Front end files are missing, ie you are developing this pluign.');
-                console.log('Run: `cd plugin-dev-phone-client` then `npm start` to run dev front-end')
+                console.log('Run: `cd web-client` then `npm start` to run dev front-end')
                 console.log('To build the front-end so that the local backend will serve it: ./build-for-release.sh')
             }
 

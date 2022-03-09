@@ -1,0 +1,13 @@
+{
+    "name": "@twilio-labs/dev-phone",
+    "author": "Twilio @twilio",
+    "bugs": "https://github.com/twilio-labs/comlink-dev-phone/issues",
+    "version": "0.0.1",
+    "scripts": {
+        "start": ""
+    },
+    "workspaces": [
+        "web-client",
+        "cli-plugin"
+    ]
+}
